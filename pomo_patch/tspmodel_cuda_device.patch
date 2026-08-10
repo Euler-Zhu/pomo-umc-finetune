@@ -1,0 +1,15 @@
+diff --git a/NEW_py_ver/TSP/POMO/TSPModel.py b/NEW_py_ver/TSP/POMO/TSPModel.py
+index 6a55cf2..927699c 100644
+--- a/NEW_py_ver/TSP/POMO/TSPModel.py
++++ b/NEW_py_ver/TSP/POMO/TSPModel.py
+@@ -25,8 +25,8 @@ class TSPModel(nn.Module):
+         pomo_size = state.BATCH_IDX.size(1)
+ 
+         if state.current_node is None:
+-            selected = torch.arange(pomo_size)[None, :].expand(batch_size, pomo_size)
+-            prob = torch.ones(size=(batch_size, pomo_size))
++            selected = torch.arange(pomo_size, device=state.BATCH_IDX.device)[None, :].expand(batch_size, pomo_size)
++            prob = torch.ones(size=(batch_size, pomo_size), device=state.BATCH_IDX.device)
+ 
+             encoded_first_node = _get_encoding(self.encoded_nodes, selected)
+             # shape: (batch, pomo, embedding)

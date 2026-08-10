@@ -1,0 +1,15 @@
+config/paths.env
+
+outputs/
+
+logs/*
+!logs/.gitkeep
+
+__pycache__/
+*.pyc
+*.pyo
+
+*.out
+*.err
+
+.DS_Store
